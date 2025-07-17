@@ -6,7 +6,7 @@ E-commerce para la empresa **Maderera Barrio Parque**, que permite a los usuario
 
 ## 📄 Descripción
 
-Este proyecto es una página web completa (frontend y backend) desarrollada para **Maderera Barrio Parque**. Permite a los usuarios:
+Este proyecto es una página web (frontend y backend) desarrollada para **Maderera Barrio Parque**. Permite a los usuarios:
 
 - Navegar por productos organizados en categorías.
 - Iniciar sesión como usuario común o administrador.
