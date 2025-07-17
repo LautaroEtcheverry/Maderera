@@ -11,7 +11,7 @@ Este proyecto es una página web (frontend y backend) desarrollada para **Madere
 - Navegar por productos organizados en categorías.
 - Iniciar sesión como usuario común o administrador.
 - Realizar búsquedas y ver información detallada de los productos.
-- Gestionar productos (crear, editar y eliminar) desde el panel de administración.
+- Gestionar productos (agregar, editar y eliminar) desde el panel de administración.
 
 ## 🚀 Cómo ejecutar el proyecto
 
