@@ -19,7 +19,7 @@ Este proyecto es una página web (frontend y backend) desarrollada para **Madere
 
 Para ejecutar este proyecto de forma local necesitás tener instalado lo siguiente:
 
-- **XAMPP** (o similar, como Laragon, WAMP, etc.)
+- **XAMPP**
   - Incluye servidor Apache y base de datos MySQL (phpMyAdmin).
 - **Navegador web** (Chrome, Firefox, etc.)
 - **Git** (opcional, si querés clonar el repositorio desde GitHub)
