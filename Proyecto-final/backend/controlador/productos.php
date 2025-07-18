@@ -1,10 +1,10 @@
 <?php
-// Controlador para manejar productos genéricos
-require_once __DIR__ . '/../modelo/conexion.php'; // <-- Agrega esta línea
+
+require_once __DIR__ . '/../modelo/conexion.php'; 
 require_once __DIR__ . '/../modelo/producto.php';
 
 
-$productoModel = new Producto($conn); // Instancia del modelo
+$productoModel = new Producto($conn); 
 
 function listarProductos() {
     global $productoModel;
