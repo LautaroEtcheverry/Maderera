@@ -3,7 +3,7 @@ const API_URL = "http://localhost/Proyecto-final/backend/modelo/api_productos.ph
 let productosGlobal = [];
 let marcaSeleccionada = null;
 
-// Obtener todos los productos (GET)
+
 function listarProductos() {
   fetch(API_URL)
     .then(res => res.json())
@@ -15,7 +15,7 @@ function listarProductos() {
     .catch(err => console.error("Error al obtener productos:", err));
 }
 
-// Mostrar productos en tabla
+
 function mostrarTablaProductos(productos) {
   const container = document.getElementById('productosContainer');
   if (!Array.isArray(productos) || productos.length === 0) {
@@ -46,7 +46,7 @@ function mostrarTablaProductos(productos) {
   container.innerHTML = html;
 }
 
-// Obtener producto por ID (opcional)
+
 function mostrarProducto(id) {
   fetch(`${API_URL}/id/${id}`)
     .then(res => res.json())
@@ -54,20 +54,20 @@ function mostrarProducto(id) {
     .catch(err => console.error("Error al obtener producto:", err));
 }
 
-// Agregar desde formulario
+
 function agregarProductoDesdeFormulario() {
   const producto = obtenerDatosFormulario();
   delete producto.id;
   agregarProducto(producto);
 }
 
-// Modificar desde formulario
+
 function modificarProductoDesdeFormulario() {
   const producto = obtenerDatosFormulario();
   modificarProducto(producto);
 }
 
-// Obtener datos desde formulario HTML
+
 function obtenerDatosFormulario() {
   return {
     id: parseInt(document.getElementById('idProducto').value),
@@ -81,7 +81,7 @@ function obtenerDatosFormulario() {
   };
 }
 
-// Agregar (POST)
+
 function agregarProducto(producto) {
   fetch(API_URL, {
     method: "POST",
@@ -96,7 +96,7 @@ function agregarProducto(producto) {
     .catch(err => console.error("Error al agregar producto:", err));
 }
 
-// Modificar (PUT)
+
 function modificarProducto(producto) {
   fetch(API_URL, {
     method: "PUT",
@@ -118,7 +118,7 @@ function modificarProducto(producto) {
     });
 }
 
-// Eliminar (DELETE)
+
 function eliminarProducto(id) {
   if (confirm("¿Estás seguro de que quieres eliminar este producto?")) {
     fetch(API_URL + '?id=' + id, {
@@ -133,9 +133,9 @@ function eliminarProducto(id) {
   }
 }
 
-// Cargar producto en el formulario
+
 function cargarProducto(id, codigo, nombre, precio, stock, descripcion, id_categoria, marca) {
-  // Llena el formulario del modal
+ 
   document.getElementById('idProductoModal').value = id;
   document.getElementById('codigoProductoModal').value = codigo;
   document.getElementById('nombreProductoModal').value = nombre;
@@ -144,7 +144,7 @@ function cargarProducto(id, codigo, nombre, precio, stock, descripcion, id_categ
   document.getElementById('descripcionProductoModal').value = descripcion;
   document.getElementById('categoriaProductoModal').value = id_categoria;
   document.getElementById('marcaProductoModal').value = marca;
-  // Muestra el modal
+  
   document.getElementById('modalFormulario').style.display = 'block';
 }
 
@@ -152,7 +152,7 @@ function cerrarModalFormulario() {
   document.getElementById('modalFormulario').style.display = 'none';
 }
 
-// Guardar cambios desde el modal
+
 function modificarProductoDesdeModal() {
   const producto = {
     id: parseInt(document.getElementById('idProductoModal').value),
@@ -168,7 +168,7 @@ function modificarProductoDesdeModal() {
   cerrarModalFormulario();
 }
 
-// Mostrar filtro de marcas únicas
+
 function mostrarFiltroMarcas(productos) {
   const marcas = [...new Set(productos.map(p => p.marca).filter(Boolean))];
   const filtroDiv = document.getElementById('filtroMarcas');
@@ -181,28 +181,21 @@ function mostrarFiltroMarcas(productos) {
   `).join('');
 }
 
-// Maneja el cambio de filtro
+
 function filtrarMarcaHandler(marca) {
   marcaSeleccionada = marca;
   mostrarTablaProductos(filtrarPorMarca(productosGlobal, marcaSeleccionada));
 }
 
-// Limpia el filtro
+
 function limpiarFiltroMarca() {
   marcaSeleccionada = null;
   document.querySelectorAll('input[name="marcaFiltro"]').forEach(el => el.checked = false);
   mostrarTablaProductos(productosGlobal);
 }
 
-// Filtra productos por marca
+
 function filtrarPorMarca(productos, marca) {
   if (!marca) return productos;
   return productos.filter(p => p.marca === marca);
 }
-
-// Ejemplos de uso
-// listarProductos();
-// mostrarProducto(1);
-// agregarProducto("Producto X", "Descripción X", 99.99);
-// modificarProducto(1, "Nuevo nombre", "Nueva descripción", 123.45);
-// eliminarProducto(1);
