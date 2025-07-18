@@ -10,13 +10,13 @@
     <a href="formulario_producto.html">Ir al formulario de gestión</a>
     <hr>
     <div class="main-flex">
-      <!-- Filtro lateral -->
+     
       <aside class="filtro-lateral">
         <h3>Filtrar por Marca</h3>
         <div id="filtroMarcas"></div>
         <button onclick="limpiarFiltroMarca()" style="margin-top:10px;">Ver todas</button>
       </aside>
-      <!-- Contenedor de productos -->
+      
       <div style="flex:1;">
         <div id="productosContainer"></div>
       </div>
@@ -25,7 +25,7 @@
     <script>
         listarProductos();
     </script>
-    <!-- Modal para editar producto -->
+    
     <div id="modalFormulario" class="modal">
       <div class="modal-content">
         <span class="close" onclick="cerrarModalFormulario()">&times;</span>
