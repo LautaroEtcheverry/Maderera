@@ -160,11 +160,11 @@ nav a {
 }
 .hero {
   width: 100%;
-  min-height: 340px;
+  min-height: 700px; /* antes 340px */
   background-image: url(https://imgs.search.brave.com/4JZxfbbrqdiWa_gkf8DCjpaHu2kpeSTSmcN_vdmimTQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWRl/cmFjcmUuY29tL2Fz/c2V0cy9pbWFnZXMv/ZGppLTczLTE5MDB4/MTQyNC53ZWJw);
   background-size: cover;
   background-position: center;
-  height: 550px;
+  height: 700px; /* antes 550px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -183,7 +183,7 @@ nav a {
   z-index: 1;
   text-align: center;
   color: #fff;
-  top: 30px; 
+  padding: 20px 0 0 0;
 }
 
 .hero h1 {
@@ -191,32 +191,107 @@ nav a {
   margin: 0 0 18px 0;
   letter-spacing: 1px;
   font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 
+  0 1px 0 #000000,
+  1px 15px 10px rgba(16,16,16,0.3),
+  1px 20px 20px rgba(16,16,16,0.2),
+  1px 25px 40px rgba(16,16,16,0.2),
+
 }
 
 .hero h2 {
+  
   font-size: 1.5rem;
-  margin: 0 0 30px 0;
+  margin: 0 0 32px 0;
   letter-spacing: 1px;
   font-weight: 500;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  text-shadow: 2px;
 }
 
 .mapa-ubicacion {
   position: relative;
   z-index: 2;
-  margin: 32px auto 0 auto;
-  max-width: 500px;
+  margin: 0;
+  max-width: 400px;
+  width: 100%;
   background: rgba(255,255,255,0.95);
   border-radius: 12px;
-  padding: 16px 8px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 24px 12px;
+  box-shadow: 0 2px 12px rgba(110, 23, 23, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .mapa-ubicacion h2 {
   color: #1d6b1d;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+  font-size: 1.15rem;
 }
+
 .mapa-ubicacion iframe {
   width: 100%;
   border: none;
   border-radius: 8px;
+  height: 300px;
+  max-width: 370px;
+}
+
+
+.contacto-flex {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin: 0 auto 40px auto;
+  max-width: 900px;
+}
+
+.form-contacto {
+  background: rgba(255,255,255,0.95);
+  padding: 28px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  max-width: 340px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch;
+}
+
+.form-contacto h2 {
+  color: #1d6b1d;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+
+.form-contacto textarea {
+  min-height: 80px;
+}
+
+.form-contacto button {
+  background: #1d6b1d;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.form-contacto button:hover {
+  background: #234e2f;
 }
