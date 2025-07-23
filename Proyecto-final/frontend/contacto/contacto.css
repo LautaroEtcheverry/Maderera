@@ -160,11 +160,10 @@ nav a {
 }
 .hero {
   width: 100%;
-  min-height: 700px; /* antes 340px */
+  min-height: 89vh; 
   background-image: url(https://imgs.search.brave.com/4JZxfbbrqdiWa_gkf8DCjpaHu2kpeSTSmcN_vdmimTQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWRl/cmFjcmUuY29tL2Fz/c2V0cy9pbWFnZXMv/ZGppLTczLTE5MDB4/MTQyNC53ZWJw);
   background-size: cover;
   background-position: center;
-  height: 700px; /* antes 550px */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,7 +187,7 @@ nav a {
 
 .hero h1 {
   font-size: 3rem;
-  margin: 0 0 18px 0;
+  margin: 0 0 30px 0;
   letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
@@ -294,4 +293,99 @@ nav a {
 
 .form-contacto button:hover {
   background: #234e2f;
+}
+footer {
+  background-color: #1d6b1d;
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
+  
+}
+
+.footer-logo img {
+  width: 120px;
+  border-radius: 8px;
+}
+
+.footer-logo h4 {
+  margin: 10px 0 4px 0;
+  font-size: 1.3rem;
+}
+
+.footer-logo p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-links,
+.footer-contact,
+.footer-social {
+  flex: 1 1 180px;
+}
+
+.footer-links h4,
+.footer-contact h4,
+.footer-social h4 {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #ffe082;
+  display: inline-block;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer-links ul li a:hover {
+  color: #ffe082;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social .social-icons a img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.18s;
+  filter: brightness(0) r;
+}
+
+.footer-social .social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ffffff44;
+  margin-top: 20px;
+  padding-top: 12px;
+  font-size: 0.9rem;
+  color: #ddd;
 }
