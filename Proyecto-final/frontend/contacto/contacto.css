@@ -13,6 +13,7 @@ header {
   padding: 0 28px;
   height: 62px;
   box-sizing: border-box;
+  
 }
 
 .header-left {
@@ -151,6 +152,10 @@ nav {
 }
 
 nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -161,7 +166,7 @@ nav a {
 .hero {
   width: 100%;
   min-height: 89vh; 
-  background-image: url(https://imgs.search.brave.com/4JZxfbbrqdiWa_gkf8DCjpaHu2kpeSTSmcN_vdmimTQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWRl/cmFjcmUuY29tL2Fz/c2V0cy9pbWFnZXMv/ZGppLTczLTE5MDB4/MTQyNC53ZWJw);
+  background-image: url(https://maderasrl.cl/wp-content/uploads/2023/06/slide3.webp);
   background-size: cover;
   background-position: center;
   display: flex;
@@ -174,7 +179,7 @@ nav a {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(29, 107, 29, 0.45);
+  background: rgba(32, 32, 32, 0.45);
 }
 
 .hero-content {
@@ -186,27 +191,19 @@ nav a {
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin: 0 0 30px 0;
   letter-spacing: 1px;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 
-  0 1px 0 #000000,
-  1px 15px 10px rgba(16,16,16,0.3),
-  1px 20px 20px rgba(16,16,16,0.2),
-  1px 25px 40px rgba(16,16,16,0.2),
+  0 1px 0 #006416,
+  0 1px 0 #ffffff,
+  1px 15px 10px rgba(16,16,16,0.3);
 
 }
 
-.hero h2 {
-  
-  font-size: 1.5rem;
-  margin: 0 0 32px 0;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-shadow: 2px;
-}
+
 
 .mapa-ubicacion {
   position: relative;
@@ -224,7 +221,7 @@ nav a {
 }
 
 .mapa-ubicacion h2 {
-  color: #1d6b1d;
+  color: #052e00;
   margin-bottom: 8px;
   font-size: 1.15rem;
 }
@@ -329,7 +326,7 @@ footer {
   width: 28px;
   height: 28px;
   transition: transform 0.18s;
-  filter: brightness(0) r;
+  filter: grayscale(30%);
 }
 
 .footer-social .social-icons a:hover img {
@@ -384,7 +381,6 @@ footer {
   width: 30px;
   height: 30px;
   transition: transform 0.2s ease;
-  filter: grayscale(100%);
 }
 
 .redes-contacto a:hover img {
