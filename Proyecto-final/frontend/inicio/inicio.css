@@ -87,6 +87,7 @@ header {
   display: flex;
   gap: 100px;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .header-center a {
@@ -151,6 +152,10 @@ nav {
 }
 
 nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 0.5px;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -197,15 +202,66 @@ nav a {
 .hero {
   width: 100%;
   min-height: 340px;
-  background-image: url(https://imgs.search.brave.com/4JZxfbbrqdiWa_gkf8DCjpaHu2kpeSTSmcN_vdmimTQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tYWRl/cmFjcmUuY29tL2Fz/c2V0cy9pbWFnZXMv/ZGppLTczLTE5MDB4/MTQyNC53ZWJw);
-  background-size: cover;
-  background-position: center;
   height: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation-duration: 12s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 0;
+}
+
+
+
+.bg1 {
+  background-image: url('./assets/fondo-principal-1.webp');
+  animation-name: fade1;
+}
+.bg2 {
+  background-image: url('./assets/fondo-principal-2.webp');
+  animation-name: fade2;
+}
+.bg3 {
+  background-image: url('./assets/fondo-principal-3.webp');
+  animation-name: fade3;
+}
+
+
+@keyframes fade1 {
+  0% { opacity: 1; }
+  27% { opacity: 1; }
+  33% { opacity: 0; }
+  94% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes fade2 {
+  0% { opacity: 0; }
+  33% { opacity: 1; }
+  60% { opacity: 1; }
+  66% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes fade3 {
+  0% { opacity: 0; }
+  66% { opacity: 1; }
+  94% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
 
 .hero::after {
   content: "";
