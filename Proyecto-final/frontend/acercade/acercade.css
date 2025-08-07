@@ -285,6 +285,49 @@ footer {
   font-size: 0.9rem;
   color: #ddd;
 }
+ 
+.imagen-info1{
+  height: 400px;
+  width: 300px;
+  border-radius: 10%;
+  padding-right: 90px;
+  transition: transform 0.4s ease;
+
+}
+
+.imagen-info1:hover {
+  transform: scale(1.10);
+
+}
+
+
+
+
+.text-info{
+  color: white;
+  padding: 0 105px;
+  max-width: 100%;
+  text-shadow: 2px 4px 4px #000000;
+  padding-bottom: 150px;
+
+}
+.title{
+  padding: 0 50px;
+  font-size: 400%;
+
+}
+
+
+
+
+
+
+
+
+  
+
+
+
 
 
 
