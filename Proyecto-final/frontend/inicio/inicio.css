@@ -422,12 +422,28 @@ nav a {
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
   transition: background 0.18s, color 0.18s, transform 0.18s;
+  animation: subir-aparecer 0.6s ease-out forwards;
 }
 
 .ver-productos-btn:hover {
   background: #ffd54f;
   color: #1d6b1d;
   transform: scale(1.05);
+}
+
+@keyframes subir-aparecer{
+  0% {
+    opacity: 0;
+    transform: translate(70px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translate(0px);
+  }
+
+
+
 }
 
 

@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de | Barrio parque</title>
-    <link rel="stylesheet" href="acercade.css">
-    <link rel="stylesheet" href="acercade.js">
-     <link rel="icon" href="../inicio/assets/Logo_oficial_maderera.png" type="image/x-icon">
+    <title>Inicio | Barrio parque</title>
+    <link rel="stylesheet" href="card.css">
+    <link rel="icon" href="../inicio/assets/Logo_oficial_maderera.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
 <header>
   <div class="header-left">
     <img src="../inicio/assets/Logo_oficial_maderera.png" alt="Logo" class="header-logo">
@@ -23,7 +24,7 @@
     </form>
   </div>
   <div class="header-center">
-    <a href="../inicio/inicio.html">Inicio</a>
+    <a href="inicio.html" class="active">Inicio</a>
     <a href="../acercade/acercade.html">Acerca de</a>
     <a href="../contacto/contacto.html">Contactos</a>
   </div>
@@ -40,6 +41,7 @@
     </a>
   </div>
 </header>
+
 <nav>
   <a href="#">Ferretería</a>
   <a href="#">Hierros</a>
@@ -48,24 +50,51 @@
   <a href="#">Pesca</a>
   <a href="#">Cons en seco</a>
 </nav>
-</head>
+<!DOCTYPE html>
+<html lang="es">
+<body>
 
+  <!-- Aquí iría tu menú de navegación -->
 
-<main>
-  <div class="hero">
-    <div class="text-info">
-      <h1 class="title">SOBRE NOSOTROS</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-        Perferendis accusamus tempora vero iste qui provident alias magni possimus distinctio atque?</p>
+  <main>
+    <div class="product-container">
+      <!-- Imagen del producto -->
+      <div class="product-image">
+        <img src="tu_imagen.png" alt="WPC Revestimiento">
+        <div class="arrow left">&#8592;</div>
+        <div class="arrow right">&#8594;</div>
+      </div>
+
+      <!-- Información del producto -->
+      <div class="product-info">
+        <h1>Wpc revestimiento</h1>
+        <p>
+          WPC revestimiento es un material compuesto de madera y plástico, ideal para exteriores por su durabilidad, resistencia al agua y bajo mantenimiento.
+        </p>
+
+        <div class="price">
+          USD <span>150</span>
+        </div>
+
+        <div class="payment-icons">
+          <img src="https://img.icons8.com/color/48/visa.png" alt="Visa">
+          <img src="https://img.icons8.com/color/48/mastercard-logo.png" alt="MasterCard">
+          <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal">
+        </div>
+
+        <div class="envio">
+          <img src="https://img.icons8.com/ios-filled/20/000000/delivery.png" alt="Envío"> ENVÍO GRATIS
+        </div>
+
+        <div class="cart-actions">
+          <button class="quantity-btn">- 1 +</button>
+          <button class="add-to-cart">AGREGAR AL CARRITO</button>
+        </div>
+      </div>
     </div>
-    <div class="pic-1">
-       <img class="imagen-info1" src="https://imgs.search.brave.com/BAiRCfEkYEmzNa4rRsM3BWJfVAJI2BDmYJQLSSsH2d0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNi8x/MS8yMi8yMS8zMi9m/b3Jlc3QtMTg1MDY0/MF82NDAuanBn" alt="Maderera barrio parque">
-    </div>
-  </div>
+  </main>
 
-  
 
-</main>
 
 
 <footer>
@@ -79,8 +108,8 @@
       <h4>Enlaces</h4>
       <ul>
         <li><a href="inicio.html">Inicio</a></li>
-        <li><a href="#">Acerca de</a></li>
-        <li><a href="../contacto/contacto.html">Contacto</a></li>
+        <li><a href="../Proyecto-final/frontend/acercade/acercade.html">Acerca de</a></li>
+        <li><a href="../Proyecto-final/frontend/contacto/contacto.html">Contacto</a></li>
       </ul>
     </div>
     <div class="footer-contact">
@@ -102,5 +131,6 @@
     <p>&copy; 2025 Barrio Parque - Todos los derechos reservados.</p>
   </div>
 </footer>
+
 </body>
 </html>
