@@ -43,6 +43,7 @@ elseif ($requestMethod == "DELETE") {
         echo json_encode(["error" => "Falta el parámetro id para eliminar"]);
     }
 }
+
 else {
     echo json_encode(["error" => "Método no permitido"]);
 }
