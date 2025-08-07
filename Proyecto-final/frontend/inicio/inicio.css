@@ -170,7 +170,7 @@ nav a {
 
 .sidebar {
   width: 150px;
-  padding: 10px;
+  padding: 90px;
   background-color: #e0e0e0;
 }
 
@@ -180,7 +180,7 @@ nav a {
   color: #234e2f;
   font-size: 17px;
   font-weight: bold;
-  padding: 10px 0;
+  padding: 0px 0;
   cursor: pointer;
   transition: color 0.18s, background 0.18s, transform 0.18s;
   border-radius: 6px;
