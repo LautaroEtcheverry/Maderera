@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db = 'maderera';
+$db = 'maderera_barrio_parque';
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {
