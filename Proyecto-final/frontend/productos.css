@@ -1,8 +1,17 @@
 body {
     background: #f6f8fa;
-    min-height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.main {
+  flex: 1;
+  display: block;
+  min-height: 100vh;
+  
+
+
+
 }
 
 
@@ -189,6 +198,7 @@ a:hover {
     align-items: flex-start;
     gap: 32px;
     justify-content: center;
+    min-height: 400vh;
 }
 
 .filtro-lateral {
