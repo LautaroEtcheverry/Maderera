@@ -105,6 +105,8 @@ header {
   font-size: 26px;
   transition: color 0.18s;
   text-decoration: none;
+  align-items: center;
+  padding-top: 10px;
 }
 
 .header-center a:hover {
@@ -168,9 +170,10 @@ nav a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  height: 25px;
+  height: 5px;
   display: flex;
   align-items: center;
+  padding-top: 10px;
 }
 
 h1 {
@@ -188,7 +191,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .main-flex {
@@ -196,22 +199,20 @@ a:hover {
     align-items: flex-start;
     gap: 32px;
     justify-content: center;
-    min-height: 400vh;
+    min-height: 100vh;
 }
 
 .filtro-lateral {
     min-width: 180px;
-    background: #f5f5f5;
     border-radius: 10px;
     padding: 18px 16px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    margin-top: 12px;
+    margin-top: 5px;
 }
 
 .filtro-lateral h3 {
     margin-top: 0;
     font-size: 1.1em;
-    color: #1976d2;
+    color: #108a00;
 }
 
 .filtro-lateral label {
@@ -225,7 +226,7 @@ a:hover {
     padding: 7px 14px;
     border: none;
     border-radius: 5px;
-    background: #1976d2;
+    background: hwb(108 0% 56%);
     color: #fff;
     font-size: 0.97em;
     cursor: pointer;
@@ -278,7 +279,7 @@ form#formProducto button {
     padding: 10px 18px;
     border: none;
     border-radius: 6px;
-    background: #1976d2;
+    background: #007c06;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
