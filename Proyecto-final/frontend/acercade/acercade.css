@@ -174,11 +174,6 @@ nav a {
   position: relative;
 }
 
-
-
-
-
-
 footer {
   background-color: #1d6b1d;
   color: #fff;
@@ -355,6 +350,46 @@ footer {
 
 }
 
+.hero-3 {
+  width: 100%;
+  min-height: 340px;
+  background-image: url(https://imgs.search.brave.com/3errFfqJKwpp-QNCJzbKJ5IVMTEeUcYVbBr5pGZY4Y8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/c29sb2ZvbmRvcy5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MTUvMTEvRm9uZG9z/LWRlLXBhbnRhbGxh/LXBhcmEtcCVDMyVB/MWdpbmFzLXdlYi5q/cGc);
+  background-size: cover;
+  background-position: top;
+  height: 550px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.text-info-3 {
+  color: white;
+  padding: 0 105px;
+  max-width: 100%;
+  text-shadow: 2px 4px 4px #000000;
+  padding-bottom: 150px;
+}
+
+.title-3 {
+  padding: 0 50px;
+  font-size: 400%;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.imagen-info3 {
+  height: 400px;
+  width: 300px;
+  border-radius: 10%;
+  padding-right: 90px;
+  transition: transform 0.4s ease;
+}
+
+.imagen-info3:hover {
+  transform: scale(1.10);
+}
 
 
 
@@ -362,7 +397,10 @@ footer {
 
 
 
-  
+
+
+
+
 
 
 

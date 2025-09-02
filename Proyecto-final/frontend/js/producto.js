@@ -1,4 +1,4 @@
-const API_URL = "http://localhost/Proyecto-final/backend/modelo/api_productos.php";
+const API_URL = "../backend/modelo/api_productos.php";
 
 let productosGlobal = [];
 let marcaSeleccionada = null;
