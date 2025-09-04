@@ -24,23 +24,24 @@ function mostrarTablaProductos(productos) {
   }
 
   let html = '<div class="productos-grid">';
-  productos.forEach(p => {
-    html += `
-      <div class="producto-card">
-        <span class="producto-codigo">#${p.codigo}</span>
-        <h3 class="producto-nombre">${p.nombre}</h3>
-        <p class="producto-descripcion">${p.descripcion}</p>
-        <p><strong>Precio:</strong> $${p.precio}</p>
-        <p><strong>Stock:</strong> ${p.stock}</p>
-        <p><strong>Categoría:</strong> ${p.id_categoria}</p>
-        <p><strong>Marca:</strong> ${p.marca}</p>
-        <div class="producto-acciones">
-          <button onclick="eliminarProducto(${p.id})">Eliminar</button>
-          <button onclick="cargarProducto(${p.id}, ${p.codigo}, '${p.nombre}', ${p.precio}, ${p.stock}, '${p.descripcion}', ${p.id_categoria}, '${p.marca}')">Cargar</button>
-        </div>
+productos.forEach(p => {
+  html += `
+    <div class="producto-card">
+      <span class="producto-codigo">#${p.codigo}</span>
+      <h3 class="producto-nombre">${p.nombre}</h3>
+      <p class="producto-descripcion">${p.descripcion}</p>
+      <p><strong>Precio:</strong> $${p.precio}</p>
+      <p><strong>Stock:</strong> ${p.stock}</p>
+      <p><strong>Categoría:</strong> ${p.id_categoria}</p>
+      <p><strong>Marca:</strong> ${p.marca}</p>
+      <div class="producto-acciones">
+        <button onclick="agregarAlCarrito(${p.id}, 1)">🛒 Agregar al carrito</button>
+        <button onclick="eliminarProducto(${p.id})">Eliminar</button>
+        <button onclick="cargarProducto(${p.id}, ${p.codigo}, '${p.nombre}', ${p.precio}, ${p.stock}, '${p.descripcion}', ${p.id_categoria}, '${p.marca}')">Cargar</button>
       </div>
-    `;
-  });
+    </div>
+  `;
+});
   html += '</div>';
   html += '<p style="text-align:center;">Total de productos: ' + productos.length + '</p>';
   container.innerHTML = html;
