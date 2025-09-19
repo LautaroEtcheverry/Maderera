@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ferretería</title>
+    <link rel="stylesheet" href="productos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<!-- 🔥 Header con carrito -->
+<header>
+  <div class="header-left">
+    <img src="/Proyecto-final/frontend/inicio/assets/Logo_oficial_maderera.png" alt="Logo" class="header-logo">
+    <form class="header-search">
+      <input type="text" placeholder="Buscar productos...">
+      <button type="submit" class="search-btn" aria-label="Buscar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="9" cy="9" r="7" stroke="#111" stroke-width="2"/>
+          <line x1="14" y1="14" x2="18" y2="17.5" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div class="header-center">
+    <a href="/maderera/Proyecto-final/frontend/inicio/inicio.html" class="active">Inicio</a>
+    <a href="/maderera/Proyecto-final/frontend/acercade/acercade.html">Acerca de</a>
+    <a href="/maderera/Proyecto-final/frontend/contacto/contacto.html">Contactos</a>
+  </div>
+  <div class="header-right">
+    <a href="/maderera/Proyecto-final/backend/routes/login.php" title="Login Usuario">
+      <span class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login" />
+      </span>
+    </a>
+    <a href="/maderera/Proyecto-final/frontend/carrito/carrito.html" title="Carrito de Compras" class="carrito-link">
+      <span class="icon-circle position-relative">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrito"/>
+        <span id="carritoBadge" class="carrito-badge">0</span>
+      </span>
+    </a>
+  </div>
+</header>
+
+<nav>
+  <a href="/maderera/Proyecto-final/frontend/productos.html">Ferretería</a>
+  <a href="../tiposdeproductos/hierros/hierros.html">Hierros</a>
+  <a href="../tiposdeproductos/pinturas/pinturas.html">Pinturas</a>
+  <a href="../tiposdeproductos/maderas/maderas.html">Maderas</a>
+  <a href="../tiposdeproductos/pesca/pesca.html">Pesca</a>
+  <a href="../tiposdeproductos/cons_en_seco/cons_en_seco.html">Cons en seco</a>
+</nav>
+
+<h1>Ferretería</h1>
+<a href="formulario_producto.html">Ir al formulario de gestión</a>
+<hr>
+
+<div class="main-flex">
+  <aside class="filtro-lateral">
+    <h3>Filtrar por Marca</h3>
+    <div id="filtroMarcas"></div>
+    <button onclick="limpiarFiltroMarca()" style="margin-top:10px;">Ver todas</button>
+  </aside>
+  
+  <div style="flex:1;">
+    <div id="productosContainer"></div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="./js/producto.js"></script>
+<script src="./carrito/carrito.js"></script>
+<script>
+  initProductos(); // 🔥 Pedimos usuario y luego listamos productos
+  contarCarrito(); // contador del carrito
+</script>
+
+<!-- Modal de edición -->
+<div id="modalFormulario" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModalFormulario()">&times;</span>
+    <h2>Editar Producto</h2>
+    <form id="formProductoModal" onsubmit="event.preventDefault();">
+      <input type="hidden" id="idProductoModal">
+      <label>Código:
+        <input type="number" id="codigoProductoModal" required>
+      </label>
+      <label>Nombre:
+        <input type="text" id="nombreProductoModal" required>
+      </label>
+      <label>Precio:
+        <input type="number" step="0.01" id="precioProductoModal" required>
+      </label>
+      <label>Stock:
+        <input type="number" id="stockProductoModal" required>
+      </label>
+      <label>Descripción:
+        <input type="text" id="descripcionProductoModal" required>
+      </label>
+      <label>Categoría:
+        <select id="categoriaProductoModal" required>
+          <option value="">Seleccionar</option>
+          <option value="1">Ferretería</option>
+          <option value="2">Hierro</option>
+          <option value="5">Pinturas</option>
+          <option value="6">Maderas</option>
+          <option value="7">Pesca</option>
+          <option value="8">Cons en seco</option>
+        </select>
+      </label>
+      <label>Marca:
+        <input type="text" id="marcaProductoModal" required>
+      </label>
+      <div style="margin-top:12px;">
+        <button type="button" id="btnGuardarModal">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Toast de confirmación -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        ✅ Producto agregado al carrito
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
