@@ -8,7 +8,7 @@ class Carrito {
 
     public function obtenerPorUsuario($usuario_id) {
         $stmt = $this->conn->prepare("
-            SELECT c.id, c.producto_id, c.cantidad, p.nombre, p.precio, p.marca
+              SELECT c.id, c.producto_id, c.cantidad, p.nombre, p.precio, p.marca, p.imagen
             FROM carrito c
             INNER JOIN productos p ON c.producto_id = p.id
             WHERE c.usuario_id = ?
@@ -20,7 +20,6 @@ class Carrito {
     }
 
     public function agregar($usuario_id, $producto_id, $cantidad) {
-        // si ya existe, actualizar cantidad
         $stmt = $this->conn->prepare("SELECT id, cantidad FROM carrito WHERE usuario_id=? AND producto_id=?");
         $stmt->bind_param("ii", $usuario_id, $producto_id);
         $stmt->execute();
@@ -37,6 +36,12 @@ class Carrito {
             $stmt->bind_param("iii", $usuario_id, $producto_id, $cantidad);
             return $stmt->execute();
         }
+    }
+
+    public function actualizar($id, $nuevaCantidad) {
+        $stmt = $this->conn->prepare("UPDATE carrito SET cantidad=? WHERE id=?");
+        $stmt->bind_param("ii", $nuevaCantidad, $id);
+        return $stmt->execute();
     }
 
     public function eliminar($id) {

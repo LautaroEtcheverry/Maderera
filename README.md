@@ -13,6 +13,11 @@ Este proyecto en desarrollo es una página web (frontend y backend) desarrollada
 - Realizar búsquedas y ver información detallada de los productos.
 - Gestionar productos (agregar, editar y eliminar) desde el panel de administración.
 
+**Usuarios de prueba:**
+- Administrador: `martin@gmail.com`
+- Cliente normal: `prueba@gmail.com`
+- Contraseña para ambos: `1234`
+
 ## 🚀 Cómo ejecutar el proyecto
 
 ### 🔧 Requisitos previos

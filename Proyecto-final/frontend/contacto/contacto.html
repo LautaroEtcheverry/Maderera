@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contacto | Barrio parque</title>
-  <link rel="stylesheet" href="contacto.css" />
-  <link rel="icon" href="../inicio/assets/Logo_oficial_maderera.png" type="image/x-icon"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Barrio parque</title>
+    <link rel="stylesheet" href="contacto.css">
+    <script src="menu.js"></script>
+    <link rel="icon" href="../inicio/assets/Logo_oficial_maderera.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+<div class="header-nav-container">
 <header>
   <div class="header-left">
-    <img src="../inicio/assets/Logo_oficial_maderera.png" alt="Logo" class="header-logo" />
-    <form class="header-search">
-      <input type="text" placeholder="Buscar productos..." />
+    <button id="menuBtn" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <img src="../inicio/assets/Logo_oficial_maderera.png" alt="Logo" class="header-logo">
+    <form class="header-search" id="formBuscar">
+      <input type="text" id="buscador" placeholder="Buscar productos...">
       <button type="submit" class="search-btn" aria-label="Buscar">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
           <circle cx="9" cy="9" r="7" stroke="#111" stroke-width="2"/>
@@ -24,51 +33,97 @@
   <div class="header-center">
     <a href="../inicio/inicio.html">Inicio</a>
     <a href="../acercade/acercade.html">Acerca de</a>
-    <a href="../contacto/contacto.html">Contactos</a>
+    <a href="../contacto/contacto.html" class="active">Contactos</a>
   </div>
   <div class="header-right">
-    <a href="#" title="Login Usuario">
+    <a id="logoutBtn" href="/maderera/Proyecto-final/backend/routes/logout.php" title="Cerrar sesión" style="display:none;">
       <span class="icon-circle">
-        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login"/>
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" alt="Logout" width="24" height="24" />
       </span>
     </a>
-    <a href="#" title="Carrito de Compras">
+    <a href="/maderera/Proyecto-final/backend/routes/login.php" title="Login Usuario">
       <span class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login" />
+      </span>
+    </a>
+    <a href="/maderera/Proyecto-final/frontend/carrito/carrito.html" title="Carrito de Compras" class="carrito-link">
+      <span class="icon-circle position-relative">
         <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrito"/>
+        <span id="carritoBadge" class="carrito-badge">0</span>
       </span>
     </a>
   </div>
 </header>
 
-<nav>
-  <a href="../tiposdeproductos/ferreteria/ferreteria.html">Ferretería</a>
+<nav class="nav-desktop">
+  <a href="../productos.html">Ferretería</a>
   <a href="../tiposdeproductos/hierros/hierros.html">Hierros</a>
   <a href="../tiposdeproductos/pinturas/pinturas.html">Pinturas</a>
   <a href="../tiposdeproductos/maderas/maderas.html">Maderas</a>
-  <a href="../tiposdeproductos/pesca/pesca.html">Pesca</a>
+  <a href="../tiposdeproductos/herrajes/herrajes.html">Herrajes</a>
   <a href="../tiposdeproductos/cons_en_seco/cons_en_seco.html">Cons en seco</a>
 </nav>
 
+<nav class="menu-mobile" id="menuMobile">
+  <div class="menu-section">
+    <h3>Categorías</h3>
+    <div class="menu-items">
+      <a href="/maderera/Proyecto-final/frontend/productos.html">Ferretería</a>
+      <a href="../tiposdeproductos/hierros/hierros.html">Hierros</a>
+      <a href="../tiposdeproductos/pinturas/pinturas.html">Pinturas</a>
+      <a href="../tiposdeproductos/maderas/maderas.html">Maderas</a>
+      <a href="../tiposdeproductos/herrajes/herrajes.html">Herrajes</a>
+      <a href="../tiposdeproductos/cons_en_seco/cons_en_seco.html">Cons en seco</a>
+    </div>
+  </div>
+  <div class="menu-section">
+    <h3>Apartados</h3>
+    <div class="menu-items">
+      <a href="../inicio/inicio.html">Inicio</a>
+      <a href="../acercade/acercade.html">Acerca de</a>
+      <a href="../contacto/contacto.html" class="active">Contactos</a>
+    </div>
+  </div>
+</nav>
+</div>
+
+<a href="https://api.whatsapp.com/send?phone=59898729051" class="btn-wsp" target="_blank" aria-label="WhatsApp">
+  <i class="icon-whatsapp"></i>
+</a>
+
+
 <main class="hero">
   <div class="hero-content">
-    <h1>Todo lo que necesitas para contactarnos</h1>
+    <h1>Contacto</h1>
     <div class="contacto-flex">
-      <div class="contactanos-left">
-        <h2>Datos de Contacto</h2>
-        <ul>
-          <li><strong>Teléfono:</strong> +598 99 123 456</li>
-          <li><strong>Dirección:</strong> Calle Principal 123, Barrio Parque</li>
-          <li><strong>Horario:</strong> Lunes a Viernes 8:00 - 18:00 | Sábados 8:00 - 13:00</li>
-          <li><strong>Email:</strong> info@barrioparque.com.uy</li>
-        </ul>
-        <div class="redes-contacto">
-          <a href="#" target="_blank" aria-label="Facebook">
+      <div class="info-table-container">
+        <table class="info-table">
+          <tbody>
+            <tr>
+              <td class="info-icon"><img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Teléfono" /></td>
+              <td class="info-label">Teléfono</td>
+              <td class="info-value"><a href="tel:+59899123456">+598 99 123 456</a></td>
+            </tr>
+            <tr>
+              <td class="info-icon"><img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Dirección" /></td>
+              <td class="info-label">Dirección</td>
+              <td class="info-value">G5W7+H2Q, Patria, 70000 Col. del Sacramento, Departamento de Colonia</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="social-table-container">
+        <h3>Redes Sociales</h3>
+        <div class="social-icons-table">
+          <a href="https://www.facebook.com/p/Maderera-Barrio-Parque-100044770196275/?locale=es_LA" target="_blank" aria-label="Facebook">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" />
           </a>
-          <a href="#" target="_blank" aria-label="Instagram">
+          <a href="https://www.instagram.com/maderera.barrioparque/" target="_blank" aria-label="Instagram">
             <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" />
           </a>
-          <a href="#" target="_blank" aria-label="WhatsApp">
+          <a href="https://api.whatsapp.com/send?phone=59898729051" target="_blank" aria-label="WhatsApp">
             <img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" />
           </a>
         </div>
@@ -76,7 +131,7 @@
 
       <div class="mapa-ubicacion">
         <h2>Ubicación</h2>
-        <iframe width="100%" height="300"
+        <iframe width="100%" height="450"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d205.62140623242917!2d-57.83871535655751!3d-34.453607476860796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a31285dff68b65%3A0xcbe5860782b6b345!2sMaderera%20Barrio%20Parque!5e0!3m2!1sen!2suy!4v1752588072513!5m2!1sen!2suy">
         </iframe>
       </div>
@@ -101,16 +156,15 @@
     </div>
     <div class="footer-contact">
       <h4>Contacto</h4>
-      <p>Dirección: Calle Principal 123, Ciudad</p>
       <p>Tel: +598 99 123 456</p>
-      <p>Email: info@barrioparque.com.uy</p>
+      <p>Horario: Lunes a Viernes 08:00–18:00 · Sábados 08:00–13:00</p>
     </div>
     <div class="footer-social">
       <h4>Seguinos</h4>
       <div class="social-icons">
-        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
-        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
-        <a href="#" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" /></a>
+        <a href="https://www.facebook.com/p/Maderera-Barrio-Parque-100044770196275/?locale=es_LA" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" /></a>
+        <a href="https://www.instagram.com/maderera.barrioparque/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" /></a>
+        <a href="https://api.whatsapp.com/send?phone=59898729051" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp" /></a>
       </div>
     </div>
   </div>
@@ -119,4 +173,26 @@
   </div>
 </footer>
 </body>
+<script src="/maderera/Proyecto-final/frontend/carrito/carrito.js"></script>
+<script>
+  if (typeof contarCarrito === 'function') {
+    contarCarrito();
+  }
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/maderera/Proyecto-final/backend/routes/get_user.php")
+    .then(res => res.json())
+    .then(data => {
+      console.log("🔍 Datos de sesión:", data);
+      if (data.logueado) {
+        document.getElementById("logoutBtn").style.display = "inline-block";
+        console.log("✅ Sesión activa, botón visible");
+      } else {
+        console.log("❌ No hay sesión activa");
+      }
+    })
+    .catch(err => console.error("⚠️ Error al verificar sesión:", err));
+});
+</script>
 </html>

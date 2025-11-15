@@ -3,37 +3,31 @@ session_start();
 
 if (!empty($_POST["login"])) {
     if (empty($_POST["email"]) || empty($_POST["password"])) {
-        echo "Debes completar todos los campos";
+        echo "Uno de los campos está vacío";
     } else {
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        // consulta preparada para buscar usuario por email
-        $stmt = $conn->prepare("SELECT id, nombre, password FROM usuarios WHERE email = ?");
+        $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
-        $resultado = $stmt->get_result();
+        $result = $stmt->get_result();
+        $usuario = $result->fetch_assoc();
 
-        if ($resultado->num_rows > 0) {
-            $usuario = $resultado->fetch_assoc();
+        if ($usuario && password_verify($password, $usuario["password"])) {
+            $_SESSION["id_usuario"] = $usuario["id"];
+            $_SESSION["nombre"] = $usuario["nombre"];
+            $_SESSION["rol"] = $usuario["rol"];
 
-            // verificar la contraseña
-            if (password_verify($password, $usuario["password"])) {
-                // guardar sesión
-                $_SESSION["id"] = $usuario["id"];
-                $_SESSION["nombre"] = $usuario["nombre"];
-                $_SESSION["email"] = $email;
-
-                header("Location: perfil.php");
-                exit();
+            if ($_SESSION["rol"] === "admin") {
+                header("Location: /maderera/Proyecto-final/frontend/inicio/inicio.html");
             } else {
-                echo "Contraseña incorrecta";
+                header("Location: /maderera/Proyecto-final/frontend/inicio/inicio.html");
             }
+            exit;
         } else {
-            echo "El usuario no existe";
+            echo "Email o contraseña incorrectos";
         }
-
-        $stmt->close();
     }
 }
 ?>

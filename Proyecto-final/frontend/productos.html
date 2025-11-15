@@ -2,86 +2,218 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Productos</title>
-    <link rel="stylesheet" href="productos.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria | Barrio parque</title>
+  <link rel="icon" href="../frontend/inicio/assets/Logo_oficial_maderera.png" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="productos.css">
+    <script src="menu.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <!-- 🔥 Barra con carrito -->
-    <nav class="navbar navbar-light bg-light mb-4 px-3">
-        <a class="navbar-brand" href="#">Maderera</a>
-        <a class="btn btn-outline-primary" href="/maderera/Proyecto-final/frontend/carrito/carrito.html">
-            🛒 Carrito (<span id="carritoBadge">0</span>)
-        </a>
-    </nav>
-
-    <h1>Lista de Productos</h1>
-    <a href="formulario_producto.html">Ir al formulario de gestión</a>
-    <hr>
     
-    <div class="main-flex">
-      <aside class="filtro-lateral">
-        <h3>Filtrar por Marca</h3>
-        <div id="filtroMarcas"></div>
-        <button onclick="limpiarFiltroMarca()" style="margin-top:10px;">Ver todas</button>
-      </aside>
-      
-      <div style="flex:1;">
-        <div id="productosContainer"></div>
-      </div>
-    </div>
+<div class="header-nav-container">
+<header>
+  <div class="header-left">
+    <button id="menuBtn" class="hamburger-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  <img src="./inicio/assets/Logo_oficial_maderera.png" alt="Logo" class="header-logo">
+    <form class="header-search" id="formBuscar">
+      <input type="text" id="buscador" placeholder="Buscar productos...">
+      <button type="submit" class="search-btn" aria-label="Buscar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="9" cy="9" r="7" stroke="#111" stroke-width="2"/>
+          <line x1="14" y1="14" x2="18" y2="17.5" stroke="#111" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div class="header-center">
+    <a href="./inicio/inicio.html">Inicio</a>
+    <a href="./acercade/acercade.html">Acerca de</a>
+    <a href="./contacto/contacto.html">Contactos</a>
+  </div>
+  <div class="header-right">
+    <a id="logoutBtn" href="/maderera/Proyecto-final/backend/routes/logout.php" title="Cerrar sesión" style="display:none;">
+      <span class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828479.png" alt="Logout" width="24" height="24" />
+      </span>
+    </a>
+    <a href="/maderera/Proyecto-final/backend/routes/login.php" title="Login Usuario">
+      <span class="icon-circle">
+        <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Login" />
+      </span>
+    </a>
+    <a href="/maderera/Proyecto-final/frontend/carrito/carrito.html" title="Carrito de Compras" class="carrito-link">
+      <span class="icon-circle position-relative">
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Carrito"/>
+        <span id="carritoBadge" class="carrito-badge">0</span>
+      </span>
+    </a>
+  </div>
+</header>
 
-    <!-- Scripts -->
-    <script src="./js/producto.js"></script>
-    <script src="./carrito/carrito.js"></script>
-    <script>
-        listarProductos();
-        contarCarrito(); // 🔥 carga inicial del contador
-    </script>
-    
-    <!-- Modal de edición -->
-    <div id="modalFormulario" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="cerrarModalFormulario()">&times;</span>
-        <h2>Editar Producto</h2>
-        <form id="formProductoModal" onsubmit="event.preventDefault();">
-          <input type="hidden" id="idProductoModal">
-          <label>Código:
-            <input type="number" id="codigoProductoModal" required>
-          </label>
-          <label>Nombre:
-            <input type="text" id="nombreProductoModal" required>
-          </label>
-          <label>Precio:
-            <input type="number" step="0.01" id="precioProductoModal" required>
-          </label>
-          <label>Stock:
-            <input type="number" id="stockProductoModal" required>
-          </label>
-          <label>Descripción:
-            <input type="text" id="descripcionProductoModal" required>
-          </label>
-          <label>Categoría:
-            <select id="categoriaProductoModal" required>
-              <option value="">Seleccionar</option>
-              <option value="1">Ferretería</option>
-              <option value="2">Hierro</option>
-              <option value="5">Pinturas</option>
-              <option value="6">Maderas</option>
-              <option value="7">Pesca</option>
-              <option value="8">Cons en seco</option>
-            </select>
-          </label>
-          <label>Marca:
-            <input type="text" id="marcaProductoModal" required>
-          </label>
-          <div style="margin-top:12px;">
-            <button type="button" onclick="modificarProductoDesdeModal()">Guardar Cambios</button>
-          </div>
-        </form>
-      </div>
+<nav class="nav-desktop">
+  <a href="productos.html">Ferretería</a>
+  <a href="./tiposdeproductos/hierros/hierros.html">Hierros</a>
+  <a href="./tiposdeproductos/pinturas/pinturas.html">Pinturas</a>
+  <a href="./tiposdeproductos/maderas/maderas.html">Maderas</a>
+  <a href="./tiposdeproductos/herrajes/herrajes.html">Herrajes</a>
+  <a href="./tiposdeproductos/cons_en_seco/cons_en_seco.html">Cons en seco</a>
+</nav>
+
+<nav class="menu-mobile" id="menuMobile">
+  <div class="menu-section">
+    <h3>Categorías</h3>
+    <div class="menu-items">
+      <a href="productos.html">Ferretería</a>
+      <a href="./tiposdeproductos/hierros/hierros.html">Hierros</a>
+      <a href="./tiposdeproductos/pinturas/pinturas.html">Pinturas</a>
+      <a href="./tiposdeproductos/maderas/maderas.html">Maderas</a>
+      <a href="./tiposdeproductos/herrajes/herrajes.html">Herrajes</a>
+      <a href="./tiposdeproductos/cons_en_seco/cons_en_seco.html">Cons en seco</a>
     </div>
-      <!-- Toast de confirmación -->
+  </div>
+  <div class="menu-section">
+    <h3>Apartados</h3>
+    <div class="menu-items">
+      <a href="./inicio/inicio.html">Inicio</a>
+      <a href="./acercade/acercade.html">Acerca de</a>
+      <a href="./contacto/contacto.html">Contactos</a>
+    </div>
+  </div>
+</nav>
+</div>
+
+
+
+
+<a id="adminLink" href="formulario_producto.html" style="display:none;" class="formulario">Panel de Administración</a>
+
+<script>
+fetch("/maderera/Proyecto-final/backend/routes/get_user.php")
+  .then(r => r.json())
+  .then(data => {
+    if (data.rol === "admin") {
+      document.getElementById("adminLink").style.display = "inline-block";
+    }
+  });
+</script>
+
+<button id="filtrosBtn" class="filtros-toggle-btn">
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <line x1="3" y1="5" x2="17" y2="5" stroke="white" stroke-width="2"/>
+    <circle cx="8" cy="5" r="2" fill="#1d6b1d" stroke="white" stroke-width="2"/>
+    <line x1="3" y1="10" x2="17" y2="10" stroke="white" stroke-width="2"/>
+    <circle cx="13" cy="10" r="2" fill="#1d6b1d" stroke="white" stroke-width="2"/>
+    <line x1="3" y1="15" x2="17" y2="15" stroke="white" stroke-width="2"/>
+    <circle cx="6" cy="15" r="2" fill="#1d6b1d" stroke="white" stroke-width="2"/>
+  </svg>
+  Filtros
+</button>
+
+<div class="categoria-header">
+  <h1>Ferretería</h1>
+  <p>Encuentra todo lo que necesitas para tus proyectos</p>
+</div>
+
+<div class="main-flex">
+  <aside class="filtro-lateral" id="filtroLateral">
+    <h3>Filtrar por Marca</h3>
+    <div id="filtroMarcas"></div>
+    <button onclick="limpiarFiltroMarca()" style="margin-top:10px;">Ver todas</button>
+  </aside>
+
+  <a href="https://api.whatsapp.com/send?phone=59898729051" class="btn-wsp" target="_blank">
+      <i class="icon-whatsapp"></i>
+
+
+  </a>
+
+  
+
+  
+  <div style="flex:1;">
+    <div id="productosContainer"></div>
+  </div>
+</div>
+ <script>const categoriaActual = 1;</script>
+<script src="./js/producto.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./carrito/carrito.js"></script>
+<script>
+  initProductos();
+  contarCarrito();
+  
+  const filtrosBtn = document.getElementById("filtrosBtn");
+  const filtroLateral = document.getElementById("filtroLateral");
+
+  if (filtrosBtn && filtroLateral) {
+    filtrosBtn.addEventListener("click", () => {
+      filtroLateral.classList.toggle("active");
+      filtrosBtn.classList.toggle("active");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!filtroLateral.contains(e.target) && !filtrosBtn.contains(e.target)) {
+        filtroLateral.classList.remove("active");
+        filtrosBtn.classList.remove("active");
+      }
+    });
+  }
+</script>
+
+<div id="modalFormulario" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="cerrarModalFormulario()">&times;</span>
+    <h2>Editar Producto</h2>
+    <form id="formProductoModal" onsubmit="event.preventDefault();">
+      <input type="hidden" id="idProductoModal">
+      <label>Código:
+        <input type="number" id="codigoProductoModal" required>
+      </label>
+      <label>Nombre:
+        <input type="text" id="nombreProductoModal" required>
+      </label>
+      <label>Precio:
+        <input type="number" step="0.01" id="precioProductoModal" required>
+      </label>
+      <label>Stock:
+        <input type="number" id="stockProductoModal" required>
+      </label>
+      <label>Descripción:
+        <input type="text" id="descripcionProductoModal" required>
+      </label>
+      <label>Categoría:
+        <select id="categoriaProductoModal" required>
+          <option value="">Seleccionar</option>
+          <option value="1">Ferretería</option>
+          <option value="2">Hierro</option>
+          <option value="5">Pinturas</option>
+          <option value="6">Maderas</option>
+          <option value="7">Pesca</option>
+          <option value="8">Cons en seco</option>
+        </select>
+      </label>
+      <label>Marca:
+        <input type="text" id="marcaProductoModal" required>
+      </label>
+      <div style="margin-top:12px;">
+        <button type="button" id="btnGuardarModal">Guardar Cambios</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+
 <div class="toast-container position-fixed bottom-0 end-0 p-3">
   <div id="liveToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
@@ -93,7 +225,59 @@
   </div>
 </div>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="./inicio/assets/Logo_oficial_maderera.png" alt="Logo Maderera Barrio Parque">
+      <h4>Barrio Parque</h4>
+      <p>Mucho más que una maderera</p>
+    </div>
+    <div class="footer-links">
+      <h4>Enlaces</h4>
+      <ul>
+        <li><a href="./inicio/inicio.html">Inicio</a></li>
+        <li><a href="./acercade/acercade.html">Acerca de</a></li>
+        <li><a href="./contacto/contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <p>Tel: +598 99 123 456</p>
+      <p>Horario: Lunes a Viernes 08:00–18:00 · Sábados 08:00–13:00</p>
+    </div>
+    <div class="footer-social">
+      <h4>Seguinos</h4>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/p/Maderera-Barrio-Parque-100044770196275/?locale=es_LA" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+        <a href="https://www.instagram.com/maderera.barrioparque/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+        <a href="https://api.whatsapp.com/send?phone=59898729051" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/3670/3670051.png" alt="WhatsApp"></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Barrio Parque - Todos los derechos reservados.</p>
+  </div>
+</footer>
+
 </body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("/maderera/Proyecto-final/backend/routes/get_user.php")
+    .then(res => res.json())
+    .then(data => {
+      console.log("🔍 Datos de sesión:", data);
+      if (data.logueado) {
+        document.getElementById("logoutBtn").style.display = "inline-block";
+        console.log("✅ Sesión activa, botón visible");
+      } else {
+        console.log("❌ No hay sesión activa");
+      }
+    })
+    .catch(err => console.error("⚠️ Error al verificar sesión:", err));
+});
+</script>
 </html>
+

@@ -33,3 +33,39 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const header = document.querySelector('header');
+  
+  menuToggle.addEventListener('click', () => {
+    header.classList.toggle('menu-open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target) && header.classList.contains('menu-open')) {
+      header.classList.remove('menu-open');
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && header.classList.contains('menu-open')) {
+      header.classList.remove('menu-open');
+    }
+  });
+
+  fetch("/maderera/Proyecto-final/backend/routes/get_user.php")
+    .then(res => res.json())
+    .then(data => {
+      console.log("🔍 Datos de sesión:", data);
+      if (data.logueado) {
+        document.getElementById("logoutBtn").style.display = "inline-block";
+        console.log("✅ Sesión activa, botón visible");
+      } else {
+        console.log("❌ No hay sesión activa");
+      }
+    })
+    .catch(err => console.error("⚠️ Error al verificar sesión:", err));
+});
+
+

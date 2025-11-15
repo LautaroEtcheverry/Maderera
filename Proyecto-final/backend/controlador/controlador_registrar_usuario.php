@@ -7,7 +7,6 @@ if (!empty($_POST["registro"])) {
         $email    = $_POST["email"];
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-        // consulta preparada
         $stmt = $conn->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $nombre, $email, $password);
 

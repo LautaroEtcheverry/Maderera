@@ -18,6 +18,15 @@ function agregarAlCarrito($usuario_id, $producto_id, $cantidad) {
     }
 }
 
+function actualizarCantidad($id, $nuevaCantidad) {
+    global $carritoModel;
+    if ($carritoModel->actualizar($id, $nuevaCantidad)) {
+        echo json_encode(["mensaje" => "Cantidad actualizada"]);
+    } else {
+        echo json_encode(["error" => "No se pudo actualizar"]);
+    }
+}
+
 function eliminarDelCarrito($id) {
     global $carritoModel;
     if ($carritoModel->eliminar($id)) {

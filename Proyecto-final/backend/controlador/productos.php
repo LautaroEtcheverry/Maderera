@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once __DIR__ . '/../modelo/conexion.php'; 
 require_once __DIR__ . '/../modelo/producto.php';
@@ -21,31 +22,30 @@ function mostrarProducto($id) {
     }
 }
 
-function agregarProducto($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca) {
+function agregarProducto($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca, $fileUrl = null) { 
     global $productoModel;
-    if ($productoModel->agregar($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca)) {
-        echo json_encode(["mensaje" => "Producto agregado"]);
-    } else {
-        echo json_encode(["error" => "No se pudo agregar"]);
-    }
+    return $productoModel->agregar($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca, $fileUrl);
 }
+
 
 
 function modificarProducto($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca, $idProducto) {
     global $productoModel;
-    if ($productoModel->modificar($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca, $idProducto)) {
-        echo json_encode(["mensaje" => "Producto modificado", "id" => $idProducto]);
-    } else {
-        echo json_encode(["error" => "No se pudo modificar"]);
-    }
+    return $productoModel->modificar($codigo, $nombre, $precio, $stock, $descripcion, $id_categoria, $marca, $idProducto);
 }
+
 
 function eliminarProducto($id) {
     global $productoModel;
-    if ($productoModel->eliminar($id)) {
-        echo json_encode(["mensaje" => "Producto eliminado", "id" => $id]);
-    } else {
-        echo json_encode(["error" => "No se pudo eliminar"]);
-    }
+    return $productoModel->eliminar($id);
 }
+
+
+
+function mostrarProductosPorCategoria($categoriaId) {
+    global $productoModel;
+    $productos = $productoModel->obtenerPorCategoria($categoriaId);
+    echo json_encode($productos);
+}
+
 ?>
