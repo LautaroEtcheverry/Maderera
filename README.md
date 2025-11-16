@@ -1,30 +1,39 @@
-# # 🌲 Maderera Barrio Parque
+# 🌲 **Maderera Barrio Parque** - E-commerce
 
-E-commerce para la empresa **Maderera Barrio Parque**, que permite a los usuarios visualizar productos y a los administradores gestionar el catálogo de forma sencilla.
+Este proyecto es una **plataforma de comercio electrónico** desarrollada para la empresa **Maderera Barrio Parque**. Permite a los usuarios visualizar productos y realizar pedidos, mientras que los administradores pueden gestionar el catálogo y el estado de los pedidos de manera sencilla.
 
 ---
 
-## 📄 Descripción
+## 📄 **Descripción del Proyecto**
 
-Este proyecto en desarrollo es una página web (frontend y backend) desarrollada para la empresa **Maderera Barrio Parque**. Permite a los usuarios:
+**Maderera Barrio Parque** es una página web (con frontend y backend) que facilita tanto a **usuarios finales** como a **administradores** la interacción con los productos y el proceso de compra en línea.
 
+### Funcionalidades Principales:
+
+#### Para los **usuarios**:
 - Navegar por productos organizados en categorías.
-- Iniciar sesión como usuario común o administrador.
-- Realizar búsquedas y ver información detallada de los productos.
-- Gestionar productos (agregar, editar y eliminar) desde el panel de administración.
+- Realizar búsquedas de productos y ver detalles de cada uno.
+- **Añadir productos al carrito** y realizar pedidos.
 
-**Usuarios de prueba:**
-- Administrador: `martin@gmail.com`
-- Cliente normal: `prueba@gmail.com`
-- Contraseña para ambos: `1234`
+#### Para los **administradores**:
+- Iniciar sesión con credenciales de administrador.
+- **Gestionar productos**: agregar, editar y eliminar productos del catálogo.
+- **Gestionar pedidos**: visualizar todos los pedidos realizados, cambiar su estado (pendiente, entregado, cancelado, etc.), y gestionarlos de manera eficiente.
 
-## 🚀 Cómo ejecutar el proyecto
 
-### 🔧 Requisitos previos
+## 🚀 **Cómo ejecutar el proyecto**
 
-Para ejecutar este proyecto de forma local necesitás tener instalado lo siguiente:
+### 🔧 **Requisitos previos**
+
+Para ejecutar este proyecto de manera local, necesitarás tener instalados los siguientes programas:
 
 - **XAMPP**
-  - Incluye servidor Apache y base de datos MySQL (phpMyAdmin).
-- **Navegador web** (Chrome, Firefox, etc.)
-- **Git** (opcional, si querés clonar el repositorio desde GitHub)
+  - Incluye el servidor Apache y la base de datos MySQL (accesible mediante phpMyAdmin).
+- **Navegador web** (Chrome, Firefox, etc.).
+- **Git** (opcional, si deseas clonar el repositorio desde GitHub).
+
+### 🛠 **Pasos para la instalación local**
+
+1. **Clonar el repositorio** (si tienes Git instalado):
+   ```bash
+   git clone https://github.com/tu_usuario/maderera-barrio-parque.git
