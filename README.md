@@ -20,6 +20,10 @@ Este proyecto es una **plataforma de comercio electrónico** desarrollada para l
 - **Gestionar productos**: agregar, editar y eliminar productos del catálogo.
 - **Gestionar pedidos**: visualizar todos los pedidos realizados, cambiar su estado (pendiente, entregado, cancelado, etc.), y gestionarlos de manera eficiente.
 
+#### Usuarios de Prueba:
+- Admin: martin@gmail.com contraseña: 1234
+- Cliente: prueba@gmail.com contraseña: 1234
+
 
 ## 🚀 **Cómo ejecutar el proyecto**
 
